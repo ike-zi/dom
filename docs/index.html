@@ -25,14 +25,16 @@
             </section>
         </main>
         <script>
-            fetch('https://jsonplaceholder.typicode.com/todos/1')
-              .then(response => response.json())
-              .then(json => {
+            async function name() {
+                let responseObj = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                let json = await responseObj.json();
                 console.log(json);
                 const section = document.querySelector("section");
                 section.innerHTML = json.title; 
                 console.log(json.title);
-            });
+            }
+
+            name();
         </script>
     </body>
 </html>
